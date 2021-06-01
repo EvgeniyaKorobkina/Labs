@@ -2,15 +2,23 @@ namespace Utils
 {
     using System;
 
-    /// <summary>
-    ///   This is the test harness
-    /// </summary>
-
     public class Test
     {
-        public static void Main()
+        private static int x;
+        static void Main()
         {
-            // Put your test code in here			
+                int f;
+            bool ok;
+
+                Console.WriteLine("Number for factorial:");
+                x = int.Parse(Console.ReadLine());
+
+            ok = Utils.Factorial(x, out f);
+                if (ok)
+                    Console.WriteLine("Factorial(" + x + ") = " + f);
+                else
+                    Console.WriteLine("Cannot compute this factorial");
+            }
         }
     }
-}
+
