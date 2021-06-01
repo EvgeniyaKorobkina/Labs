@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,43 +22,59 @@ namespace WhatDay3
     }
     class WhatDay
     {
-        static void Main(string[] args)
+        static void Main( )
         {
             try
             {
-                Console.Write("Please input a day number between 1 and 365: ");
-                
-                int dayNum = int.Parse(Console.ReadLine());
+                Console.Write("Please enter the year: ");
+                string line = Console.ReadLine( );
+                int yearNum = int.Parse(line);
 
-                if (dayNum < 1 || dayNum > 365)
-                {
-                    throw new ArgumentOutOfRangeException("Day out of Range");
-                }
+                bool isLeapYear = (yearNum % 4 == 0)
+                && (yearNum % 100 != 0
+                    || yearNum % 400 == 0);
 
-                int monthNum = 0;
+                int maxDayNum = isLeapYear ? 366 : 365;
 
-                foreach (int daysInMonth in DaysInMonths)
-                {
-                    if (dayNum <= daysInMonth)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        dayNum -= daysInMonth;
-                        monthNum++;
-                    }
-                }
+                Console.Write("Please enter a day number between 1 and {0}: ", maxDayNum);
+                line = Console.ReadLine( );
+                int dayNum = int.Parse(line);
 
-                MonthName temp = (MonthName)monthNum;
-                string monthName = temp.ToString();
+                if (dayNum < 1 || dayNum > maxDayNum) {
+                   throw new 
+                ArgumentOutOfRangeException("Day out of range");
 
-                Console.WriteLine("{0} {1}", dayNum, monthName);
             }
-            catch (Exception caught)
-            {
-                Console.WriteLine(caught);
+            int monthNum = 0;
+
+            if (isLeapYear) {
+                foreach (int daysInMonth in DaysInLeapMonths) {
+                    if (dayNum <= daysInMonth) {
+                    break;
+                } else {
+                    dayNum -= daysInMonth;
+                    monthNum++;
+                }
             }
+            } else {
+                foreach (int daysInMonth in DaysInMonths) {
+                    if (dayNum <= daysInMonth) {
+                    break;
+                } else {
+                    dayNum -= daysInMonth;
+                    monthNum++;
+                }
+            }
+        }
+
+        MonthName temp = (MonthName)monthNum;
+        string monthName = temp.ToString( );
+        Console.WriteLine("{0} {1}", dayNum, monthName);
+    }
+    catch (Exception caught) {
+    Console.WriteLine(caught);
+    }
+
         }
         // Don't modify anything below here
         static System.Collections.ICollection DaysInMonths
