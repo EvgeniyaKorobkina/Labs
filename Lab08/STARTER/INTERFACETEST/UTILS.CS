@@ -3,6 +3,21 @@ namespace Utils
     using System;
 
     class Utils
+<<<<<<< HEAD
+{
+public static bool IsItFormattable(object x)
+{
+// Use the is operator to test whether the
+// object has the IFormattable interface
+
+if (x is IFormattable)
+return true;
+else
+return false;
+}
+}
+}
+=======
     {
 
     //
@@ -128,3 +143,4 @@ namespace Utils
     }
     }
 }
+>>>>>>> 542fab7bd76e235e703140b19647acb5c76bde73
