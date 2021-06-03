@@ -4,6 +4,29 @@ using System.Collections;
 
 class BankAccount 
 {
+<<<<<<< HEAD
+    public void Dispose( )
+    {
+        if (!disposed)
+        {
+            StreamWriter swFile = File.AppendText("Transactions.Dat");
+            swFile.WriteLine("Account number is {0}", accNo);
+            swFile.WriteLine("Account balance is {0}", accBal);
+            swFile.WriteLine("Account type is {0}", accType);
+            swFile.WriteLine("Transactions:");
+            foreach(BankTransaction tran in tranQueue)
+            {
+                swFile.WriteLine("Date/Time: {0}\tAmount:{1}", tran.When( ), tran.Amount( ));
+            }
+            swFile.Close( );
+            disposed = true;
+            GC.SuppressFinalize(this);
+        }
+    }
+
+
+=======
+>>>>>>> 542fab7bd76e235e703140b19647acb5c76bde73
 	private long accNo;
     private decimal accBal;
     private AccountType accType;
