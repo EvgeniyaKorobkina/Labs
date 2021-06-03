@@ -4,6 +4,21 @@ namespace Utils
 
     class Utils
     {
+<<<<<<< HEAD
+        public static void Display(object item)
+        {
+            IPrintable ip;
+
+            ip = (item as IPrintable);
+
+            if (ip != null)
+            ip.Print( );
+            else
+            Console.WriteLine(item.ToString( ));
+        }
+ 		
+=======
+>>>>>>> 542fab7bd76e235e703140b19647acb5c76bde73
 
     
 	public static bool IsItFormattable(object x)
