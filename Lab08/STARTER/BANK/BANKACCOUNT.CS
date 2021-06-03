@@ -7,6 +7,16 @@ class BankAccount
     
     private static long nextNumber = 123;
 
+<<<<<<< HEAD
+    public void TransferFrom(BankAccount accFrom, decimal amount)
+    {
+        if (accFrom.Withdraw(amount))
+            this.Deposit(amount);
+    }
+
+
+=======
+>>>>>>> 542fab7bd76e235e703140b19647acb5c76bde73
     public void Populate(decimal balance)
     {
         accNo = NextNumber();
