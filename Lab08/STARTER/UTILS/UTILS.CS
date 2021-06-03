@@ -9,6 +9,20 @@ namespace Utils
     // Return the larger of two integer values
     //
 
+<<<<<<< HEAD
+        public static void Reverse(ref string s)
+        {
+            string sRev = "";
+
+            for (int k = s.Length - 1; k >= 0 ; k--)
+            sRev = sRev + s[k];
+
+            s = sRev;
+        }
+
+
+=======
+>>>>>>> 542fab7bd76e235e703140b19647acb5c76bde73
     public static int Greater(int a, int b)
     {
         if (a>b)
@@ -127,4 +141,9 @@ namespace Utils
         return ok;
     }
     }
+<<<<<<< HEAD
+   
+
+=======
+>>>>>>> 542fab7bd76e235e703140b19647acb5c76bde73
 }
