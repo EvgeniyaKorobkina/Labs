@@ -7,6 +7,37 @@ class BankAccount
     
     private static long nextNumber = 123;
 
+<<<<<<< HEAD
+    public BankAccount( )
+    {
+        accNo = NextNumber( );
+        accType = AccountType.Checking;
+        accBal = 0;
+    }
+   
+    public BankAccount(AccountType aType)
+    {
+        accNo = NextNumber( );
+        accType = aType;
+        accBal = 0;
+    }
+
+    public BankAccount(decimal aBal)
+    {
+        accNo = NextNumber( );
+        accType = AccountType.Checking;
+        accBal = aBal;
+    }
+
+    public BankAccount(AccountType aType, decimal aBal)
+    {
+        accNo = NextNumber( );
+        accType = aType;
+        accBal = aBal;
+    }
+
+
+=======
     public void Populate(decimal balance)
     {
         accNo = NextNumber();
@@ -14,6 +45,7 @@ class BankAccount
         accType = AccountType.Checking;
     }
 
+>>>>>>> 542fab7bd76e235e703140b19647acb5c76bde73
     public bool Withdraw(decimal amount)
     {
         bool sufficientFunds = accBal >= amount;
@@ -48,4 +80,13 @@ class BankAccount
     {
         return nextNumber++;
     }
+<<<<<<< HEAD
+
+    public Queue Transactions( )
+{
+return tranQueue;
+}
+
+=======
+>>>>>>> 542fab7bd76e235e703140b19647acb5c76bde73
 }
